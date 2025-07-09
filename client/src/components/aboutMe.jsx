@@ -1,4 +1,6 @@
 import { useMemo } from 'react';
+import mernLogo from "../assets/images/mern.png";
+
 
 export default function AboutMe() {
   // Memoize the animation style to prevent re-creation on re-render
@@ -36,7 +38,7 @@ export default function AboutMe() {
             style={{ transform: 'translateZ(0)' }}
           >
             <img
-              src="https://picsum.photos/200/300"
+              src={mernLogo}
               alt="Profile"
               className="w-full h-full object-cover select-none"
               draggable={false}

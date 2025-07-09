@@ -1,6 +1,6 @@
 import { useScrollReveal } from "../hooks/useScrollReveal";
 import { useMemo } from "react";
-
+import profile from "../assets/images/profile.png";
 // Moved animations to constants outside component to prevent re-creation on re-render
 const fadeUpAnim = `@keyframes fadeUp {
   0% { opacity: 0; transform: translateY(30px); }
@@ -42,7 +42,7 @@ const LandingPage = () => {
           style={{ transform: "translateZ(0)" }} // Force GPU acceleration
         >
           <img
-            src="https://picsum.photos/200/300"
+            src={profile}
             alt="Landing Page Image"
             className="h-full w-full object-cover rounded-full"
             draggable={false}
