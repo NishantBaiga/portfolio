@@ -8,10 +8,9 @@ const Home = () => {
   return (
     <div>
       <Header />
-
       <SocialSidebar />
-      <main className="pt-16  ">
         <LandingPage />
+      <main className="">
         <AboutMe />
         <ProjectsPage />
         <ContactPage />

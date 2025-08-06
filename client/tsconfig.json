@@ -1,0 +1,84 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./src/*"]
+    },
+
+
+    
+    /* 📁 Project Structure */
+
+    "allowJs": true, // allow JS files to be compiled
+    "checkJs": false, // skip type checking for JS files
+
+    // Entry point for TypeScript files (your source folder)
+    "rootDir": "./src",
+
+    // Output folder for compiled files (optional for React apps using Vite/Webpack)
+    "outDir": "./dist",
+
+    /* ⚛️ JSX and React Settings */
+
+    // Use the modern JSX transform (no need to import React in every file)
+    "jsx": "react-jsx",
+
+    /* 🌐 Module & Browser Target */
+
+    // Compile output for modern browsers (ES6 = 2015+)
+    "target": "ES6",
+
+    // Use latest module syntax for bundlers like Vite/Webpack
+    "module": "ESNext",
+
+    // Resolves modules like Node.js does (used by all bundlers)
+    "moduleResolution": "node",
+
+    // Allows importing `.json` files as modules
+    "resolveJsonModule": true,
+
+    // Allow default imports from non-ES modules (like importing `react` or `lucide-react`)
+    "allowSyntheticDefaultImports": true,
+
+    // Enables compatibility between CommonJS and ESModules (important for npm packages)
+    "esModuleInterop": true,
+
+    /* ✅ Type Checking & Safety */
+
+    // Enable all strict type-checking options
+    "strict": true,
+
+    // Disallow variables without explicit types unless TypeScript can infer them
+    "noImplicitAny": true,
+
+    // Forces you to check if a value might be undefined or missing when accessing by index
+    "noUncheckedIndexedAccess": true,
+
+    // Forces you to distinguish between `undefined` and not-present optional props
+    "exactOptionalPropertyTypes": true,
+
+    // File paths must match casing on disk (prevents issues on case-sensitive systems)
+    "forceConsistentCasingInFileNames": true,
+
+    // Ensures each file can be safely compiled in isolation (required for React + Vite/Webpack)
+    "isolatedModules": true,
+
+    /* 🐞 Debugging */
+
+    // Generate `.map` files to map compiled JS back to TS in dev tools
+    "sourceMap": true,
+
+    /* ⚡️ Performance */
+
+    // Skip type-checking of external packages in `node_modules`
+    "skipLibCheck": true
+  },
+
+  /* ✅ Files to Compile */
+
+  // Include all files in the `src` folder
+  "include": ["./src/**/*"],
+
+  // Exclude compiled files and dependencies
+  "exclude": ["./node_modules", "./dist"]
+}

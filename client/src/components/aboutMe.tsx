@@ -25,7 +25,7 @@ export default function AboutMe() {
 
       <section
         id="aboutMe"
-        className="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-50 via-white to-purple-50 px-4 py-16 dark:bg-gradient-to-br dark:from-gray-800 dark:via-gray-700 dark:to-gray-600"
+        className= " min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-50 via-white to-purple-50 px-4 py-16 dark:bg-gradient-to-br dark:from-gray-800 dark:via-gray-700 dark:to-gray-600"
       >
         <div className="max-w-6xl w-full flex flex-col md:flex-row items-center gap-12 relative">
 
