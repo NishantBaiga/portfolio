@@ -9,7 +9,7 @@ const Home = () => {
     <div>
       <Header />
       <SocialSidebar />
-      <main className="">
+      <main >
         <LandingPage />
         <AboutMe />
         <ProjectsPage />
