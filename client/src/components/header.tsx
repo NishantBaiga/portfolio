@@ -20,7 +20,7 @@ const Header = () => {
           : "rgba(255, 255, 255, 0)",
         backdropFilter: isScrolled ? "blur(10px)" : "blur(0px)",
         boxShadow: isScrolled ? "0 2px 20px rgba(0,0,0,0.2)" : "none",
-        height: isScrolled ? "5rem" : "5rem",
+        height: isScrolled ? "4.5rem" : "4.5rem",
       }}
       transition={{ duration: 0.5, ease: "easeOut" }}
       className="fixed top-0 left-0 w-full z-50 flex items-center justify-between px-6"
@@ -39,7 +39,7 @@ const Header = () => {
 
           {/* Desktop Menu */}
           <nav
-            className={`hidden lg:flex gap-4 sm:gap-6 py-3 px-4 sm:py-4 sm:px-6 rounded-full transition-all duration-300 ${
+            className={`hidden lg:flex gap-4 sm:gap-6 py-2 px-4 sm:py-4 sm:px-6 rounded-full transition-all duration-300 ${
               isScrolled
                 ? "bg-transparent shadow-none border-none backdrop-blur-none"
                 : "bg-transparent dark:bg-gray-800/80 shadow-md backdrop-blur-md"
@@ -49,7 +49,7 @@ const Header = () => {
               <a
                 key={item}
                 href={`#${item}`}
-                className="text-gray-700 text-md dark:text-gray-300 hover:text-blue-500 transition-colors capitalize"
+                className="text-gray-700 text-sm dark:text-gray-300 hover:text-blue-500 transition-colors capitalize"
               >
                 {item}
               </a>

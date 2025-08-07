@@ -14,12 +14,12 @@ export default function DarkModeToggle() {
       role="switch"
       aria-checked={isDarkMode}
       title="Toggle dark mode"
-      className="h-12 w-12 rounded-full transition-colors cursor-pointer "
+      className="h-10 w-10 rounded-full transition-colors cursor-pointer "
     >
       {isDarkMode ? (
-        <Sun className=" transition-transform duration-300 transform scale-150" />
+        <Sun className=" transition-transform duration-300 transform scale-120" />
       ) : (
-        <Moon className=" transition-transform duration-300 transform scale-150" />
+        <Moon className=" transition-transform duration-300 transform scale-120" />
       )}
     </Button>
   );

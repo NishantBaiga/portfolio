@@ -9,8 +9,8 @@ const Home = () => {
     <div>
       <Header />
       <SocialSidebar />
-        <LandingPage />
       <main className="">
+        <LandingPage />
         <AboutMe />
         <ProjectsPage />
         <ContactPage />
