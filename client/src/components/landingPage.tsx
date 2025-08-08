@@ -1,5 +1,5 @@
 import { useState, useRef } from 'react';
-import { motion, useScroll, useTransform, AnimatePresence } from 'framer-motion';
+import { motion, useScroll, useTransform, AnimatePresence, animate } from 'framer-motion';
 import { 
   ArrowRight, Code, Cpu, Database, GitBranch, Globe, 
   LayoutDashboard, Smartphone, Terminal, Zap, Rocket, Shield, CpuIcon 
@@ -37,17 +37,32 @@ const LandingPage = () => {
     },
   ];
 
-  const techStack = [
-    { name: "React", icon: <CpuIcon className="w-8 h-8" /> },
-    { name: "TypeScript", icon: <Terminal className="w-8 h-8" /> },
-    { name: "Node.js", icon: <Code className="w-8 h-8" /> },
-    { name: "PostgreSQL", icon: <Database className="w-8 h-8" /> },
-    { name: "GraphQL", icon: <GitBranch className="w-8 h-8" /> },
-    { name: "AWS", icon: <Globe className="w-8 h-8" /> },
-  ];
+  // const techStack = [
+  //   { name: "React", icon: <CpuIcon className="w-8 h-8" /> },
+  //   { name: "TypeScript", icon: <Terminal className="w-8 h-8" /> },
+  //   { name: "Node.js", icon: <Code className="w-8 h-8" /> },
+  //   { name: "PostgreSQL", icon: <Database className="w-8 h-8" /> },
+  //   { name: "GraphQL", icon: <GitBranch className="w-8 h-8" /> },
+  //   { name: "AWS", icon: <Globe className="w-8 h-8" /> },
+  // ];
+  const scrollToSection = (id: string) => {
+    const element = document.getElementById(id);
+    if (!element) return;
 
+    const headerOffset = 70; // adjust if your header height differs
+    const elementPosition =
+      element.getBoundingClientRect().top + window.scrollY;
+    const offsetPosition = elementPosition - headerOffset;
+
+    animate(window.scrollY, offsetPosition, {
+      duration: 0.8,
+      ease: "easeInOut",
+      onUpdate: (latest) => window.scrollTo(0, latest),
+    });
+  };
   return (
     <div 
+    id='home'
       ref={containerRef}
       className="bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100"
       style={{ willChange: 'transform' }} // Hint for browser optimization
@@ -87,6 +102,7 @@ const LandingPage = () => {
             </motion.p>
             <div className="flex flex-wrap gap-4 justify-center">
               <motion.button
+              onClick={() => scrollToSection('projects')}
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.6 }}
@@ -106,6 +122,7 @@ const LandingPage = () => {
                 </motion.span>
               </motion.button>
               <motion.button
+                onClick={() => scrollToSection('contact')}
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.7 }}
@@ -158,7 +175,7 @@ const LandingPage = () => {
       </section>
 
       {/* Tech Stack Section - Minimal animations */}
-      <section className="py-16 md:py-24 bg-white dark:bg-gray-900">
+      {/* <section className="py-16 md:py-24 bg-white dark:bg-gray-900">
         <div className="container mx-auto px-6">
           <motion.div
             initial={{ opacity: 0 }}
@@ -198,10 +215,10 @@ const LandingPage = () => {
             ))}
           </motion.div>
         </div>
-      </section>
+      </section> */}
 
       {/* CTA Section - Simple animation */}
-      <section className="py-16 md:py-24 bg-gradient-to-r from-blue-600 to-purple-600 text-white">
+      {/* <section className="py-16 md:py-24 bg-gradient-to-r from-blue-600 to-purple-600 text-white">
         <div className="container mx-auto px-6 text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -232,7 +249,7 @@ const LandingPage = () => {
             </div>
           </motion.div>
         </div>
-      </section>
+      </section> */}
     </div>
   );
 };

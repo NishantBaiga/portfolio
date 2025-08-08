@@ -70,7 +70,7 @@ const AboutMe = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-100 to-gray-50 dark:from-gray-900 dark:to-gray-800 text-gray-900 dark:text-white p-8 md:p-12 lg:p-16 transition-colors duration-300">
+    <div id="aboutMe" className="min-h-screen bg-gradient-to-br from-gray-100 to-gray-50 dark:from-gray-900 dark:to-gray-800 text-gray-900 dark:text-white p-8 md:p-12 lg:p-16 transition-colors duration-300">
       <div className="max-w-6xl mx-auto">
         {/* Header */}
         <motion.div
@@ -80,7 +80,7 @@ const AboutMe = () => {
           className="mb-12"
         >
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4">
-            Hello, I'm <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-400 dark:to-purple-600">Alex</span>
+            Hello, I'm <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-400 dark:to-purple-600">Nishant Baiga</span>
           </h1>
           <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl">
             A passionate Fullstack Developer crafting digital experiences that matter.
@@ -99,7 +99,7 @@ const AboutMe = () => {
                 About Me
               </h2>
               <p className="text-lg text-gray-600 dark:text-gray-300">
-                With over 5 years of experience in web development, I specialize in building scalable, 
+                With over 1 years of experience in web development, I specialize in building scalable, 
                 performant applications with modern technologies. I bridge the gap between design and 
                 technical implementation.
               </p>
