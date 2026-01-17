@@ -1,4 +1,10 @@
-const DeskTopMenu = ({ menuItems, scrollToSection, isScrolled }) => {
+interface Props {
+  menuItems: { id: string; label: string , isDownload?: boolean}[];
+  scrollToSection: (id: string) => void;
+  isScrolled: boolean;
+}
+
+const DeskTopMenu = ({ menuItems, scrollToSection, isScrolled }: Props) => {
   return (
     <>
       <nav
@@ -8,15 +14,26 @@ const DeskTopMenu = ({ menuItems, scrollToSection, isScrolled }) => {
             : "bg-white/80 dark:bg-gray-800/80 shadow-md backdrop-blur-md"
         }`}
       >
-        {menuItems.map(({ id, label }) => (
-          <button
-            key={id}
-            onClick={() => scrollToSection(id)}
-            className="text-sm text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors capitalize px-3 py-1 rounded-md hover:bg-gray-100 dark:hover:bg-gray-700/50"
-          >
-            {label}
-          </button>
-        ))}
+        {menuItems.map(({ id, label, isDownload }) =>
+          isDownload ? (
+            <a
+              key={id}
+              href="/resume.pdf"
+              download="Nishant_Baiga_Resume.pdf"
+              className="text-sm text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors capitalize px-3 py-1 rounded-md hover:bg-gray-100 dark:hover:bg-gray-700/50"
+            >
+              {label}
+            </a>
+          ) : (
+            <button
+              key={id}
+              onClick={() => scrollToSection(id)}
+              className="text-sm text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors capitalize px-3 py-1 rounded-md hover:bg-gray-100 dark:hover:bg-gray-700/50"
+            >
+              {label}
+            </button>
+          ),
+        )}
       </nav>
     </>
   );
